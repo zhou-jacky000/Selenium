@@ -97,23 +97,23 @@ def click_ChatBot_clearchat():
 
 def click_ChatBot_questions():
     try:
-        wait_and_click(By.XPATH, '//button[contains(text(), "I have questions")]', '問題按鈕')
+        wait_and_click(By.XPATH, '//button[contains(text(), "I have questions")]', 'Questions 按鈕')
         time.sleep(5)
     except TimeoutException:
-        print("未能找到問題按鈕")
+        print("未能找到Questions按鈕")
 
 
 def click_ChatBot_priceing():
     try:
-        wait_and_click(By.XPATH, '/html/body/div/div[1]/div/div/div[4]/div[2]/div/div[4]/div/div/button[3]', '價錢按鈕')
+        wait_and_click(By.XPATH, '/html/body/div/div[1]/div/div/div[4]/div[2]/div/div[4]/div/div/button[3]', 'Price 按鈕')
         time.sleep(5)
     except TimeoutException:
-        print("未能找到價錢按鈕")
+        print("未能找到Price按鈕")
 def click_CahtBot_compareplans():
     try:
         wait_and_click(By.XPATH, '/html/body/div/div[1]/div/div/div[4]/div[2]/div/div[6]/div/div/div/div/div[2]/div/div[1]/div/div/div/div/ul/li[1]', '比較方案按鈕')
     except TimeoutException:
-        print("未能找到比較方案按鈕")
+        print("未能找到Compare Plans按鈕")
 
 # 主程式流程
 try:
