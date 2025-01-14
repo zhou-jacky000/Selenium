@@ -43,6 +43,7 @@ def click_ChatBot_button():
 
         # 切換回主頁面，避免嵌套問題
         driver.switch_to.default_content()
+        time.sleep(5)
     except TimeoutException:
         print("未能找到聊天機器人 iframe")
 
@@ -61,6 +62,7 @@ def click_ChatBot_contact():
         )
         contact_button.click()
         print("已點擊 Contact 按鈕")
+        time.sleep(5)
     except TimeoutException:
         print("未能找到 chat-widget iframe 或 Contact 按鈕")
     
@@ -80,6 +82,7 @@ def input_Text():
         )
         send_button.click()
         print("已點擊 傳送 按鈕")
+        time.sleep(5)
     except TimeoutException:
         print("未能找到輸入框")
 
@@ -92,13 +95,14 @@ def click_ChatBot_clearchat():
         )
         option_button.click()
         print("已點擊 Option 按鈕")
-        time.sleep(3.5)
+        time.sleep(2.5)
         # 點擊Clear按鈕
         clear_button = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.XPATH, '//li[@role="menuitem" and contains(text(), "Clear chat")]'))
         )
         clear_button.click()
         print("已點擊 Clear 按鈕")
+        time.sleep(5)
     except TimeoutException:
         print("未能找到Clear按鈕")
 
@@ -109,6 +113,7 @@ def click_ChatBot_questions():
         )
         questions.click()
         print("已點擊問題按鈕")
+        time.sleep(5)
     except TimeoutException:
         print("未能找到問題按鈕")
 
@@ -120,6 +125,7 @@ def click_ChatBot_priceing():
         )
         priceing.click()
         print("已點擊價錢按鈕")
+        time.sleep(5)
     except TimeoutException:
         print("未能找到價錢按鈕")
 def click_CahtBot_compareplans():
@@ -136,18 +142,13 @@ def click_CahtBot_compareplans():
 try:
     open_page()
     click_ChatBot_button()
-    time.sleep(5)
     click_ChatBot_contact()
-    time.sleep(5)
     input_Text()
-    time.sleep(5)
     click_ChatBot_clearchat()
-    time.sleep(5)
     click_ChatBot_questions()
-    time.sleep(5)
     click_ChatBot_priceing()
-    time.sleep(5)
     click_CahtBot_compareplans()
+    print("已導入至 Compare plans")
     time.sleep(500)   
 except Exception as e:
     print(f"流程中斷：{e}")
