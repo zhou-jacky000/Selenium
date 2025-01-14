@@ -17,7 +17,7 @@ service = Service(executable_path=chromedriver_path)
 
 # 建立瀏覽器選項
 options = uc.ChromeOptions()
-options.headless = False  # 設為 True 以啟用非可視化模式
+options.headless = False  
 
 # 初始化 undetected_chromedriver
 driver = uc.Chrome(service=service, options=options)
